@@ -39,7 +39,7 @@ const CategoryNews = () => {
 
   return (
     <div className="p-4 space-y-4">
-      <h1 className="text-xl font-bold">News List</h1>
+      <h1 className="text-xl font-bold">Total {news.length} news found</h1>
 
       <DataWrapper
         loading={loading}
