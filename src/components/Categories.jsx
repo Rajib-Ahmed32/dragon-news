@@ -7,7 +7,7 @@ const Categories = () => {
   const { data, loading, error } = useFetchData("/categories.json");
 
   return (
-    <div className="p-4">
+    <div className="">
       <h2 className="text-lg font-semibold text-gray-700">
         Categories {data?.length ? `(${data.length})` : ""}
       </h2>

@@ -2,6 +2,7 @@ import React from "react";
 import SocialLogin from "../SocialLogin";
 import SocialLinks from "./SocialLinks";
 import QZone from "./QZone";
+import DarkBackground from "../DarkBackground";
 
 const RightAside = () => {
   return (
@@ -9,6 +10,7 @@ const RightAside = () => {
       <SocialLogin />
       <SocialLinks />
       <QZone />
+      <DarkBackground />
     </div>
   );
 };

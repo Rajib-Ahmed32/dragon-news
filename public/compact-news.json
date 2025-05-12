@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Bayern Slams Authorities Over Flight Delay to Club World Cup",
+    "thumbnail_url": "https://picsum.photos/id/1011/400/200",
+    "author": {
+      "published_date": "2022-01-04"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Bayern Slams Authorities Over Flight Delay to Club World Cup",
+    "thumbnail_url": "https://picsum.photos/id/1015/400/200",
+    "author": {
+      "published_date": "2022-01-04"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Bayern Slams Authorities Over Flight Delay to Club World Cup",
+    "thumbnail_url": "https://picsum.photos/id/1025/400/200",
+    "author": {
+      "published_date": "2022-01-04"
+    }
+  }
+]
