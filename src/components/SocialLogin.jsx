@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa";
 const SocialLogin = () => {
   return (
     <div>
-      <h2 className="font-bold mb-5">Login with</h2>
+      <h2 className="text-lg font-semibold text-gray-700 mb-5">Login with</h2>
       <div className="space-y-3">
         <button className="btn btn-outline btn-secondary w-full">
           <FcGoogle size={24} /> Login with Google

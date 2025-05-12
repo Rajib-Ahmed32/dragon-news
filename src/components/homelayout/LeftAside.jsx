@@ -3,7 +3,7 @@ import Categories from "../Categories";
 
 const LeftAside = () => {
   return (
-    <div>
+    <div className="shadow-sm">
       <Categories />
     </div>
   );

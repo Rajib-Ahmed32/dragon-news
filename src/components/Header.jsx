@@ -13,8 +13,8 @@ const Header = () => {
         Journalism without fear and fever
       </p>
       <p className="text-accent font-semibold text-sm sm:text-base">
-        <span className="opacity-100">{day}, </span>
-        <span className="opacity-70">{rest}</span>
+        <span className="">{day}, </span>
+        <span className="">{rest}</span>
       </p>
     </div>
   );
