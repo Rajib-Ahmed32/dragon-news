@@ -1,7 +1,48 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+import { updateProfile, sendEmailVerification } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const { email, password, photo, name } = form;
+
+    createUser(email.value, password.value)
+      .then((result) => {
+        const user = result.user;
+        updateProfile(user, {
+          displayName: name.value,
+          photoURL: photo.value,
+        })
+          .then(() => {
+            sendEmailVerification(user)
+              .then(() => {
+                toast.success(
+                  `Registration successful! Please verify your email. Welcome, ${name.value}`
+                );
+                form.reset();
+              })
+              .catch((emailError) => {
+                toast.error("Failed to send verification email.");
+              });
+          })
+          .catch((profileError) => {
+            toast.error(
+              "Registration succeeded, but failed to update profile."
+            );
+          });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast.error(`Registration failed: ${errorMessage}`);
+      });
+  };
+
   return (
     <section>
       <div className="flex flex-col items-center justify-center px-4 py-4 mx-auto min-h-screen">
@@ -10,7 +51,7 @@ const Register = () => {
             <h1 className="text-lg font-semibold text-gray-900 dark:text-white text-center">
               Create Account
             </h1>
-            <form className="space-y-3" action="#">
+            <form onSubmit={handleSubmit} className="space-y-3">
               <div>
                 <label
                   htmlFor="name"
@@ -79,9 +120,12 @@ const Register = () => {
                 />
               </div>
 
-              <Link className="btn my-3 w-full btn-primary px-4 py-2 sm:px-8 text-sm sm:text-base">
+              <button
+                type="submit"
+                className="btn my-3 w-full btn-primary px-4 py-2 sm:px-8 text-sm sm:text-base"
+              >
                 Register
-              </Link>
+              </button>
 
               <p className="text-xs font-light text-gray-500 dark:text-gray-400 text-center">
                 Already have an account?{" "}
