@@ -1,3 +1,5 @@
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import React from "react";
 import { Outlet } from "react-router";
 import Header from "../components/Header";
@@ -29,6 +31,7 @@ const HomeLayout = () => {
           <RightAside />
         </section>
       </main>
+      <ToastContainer position="top-center" />
     </div>
   );
 };
