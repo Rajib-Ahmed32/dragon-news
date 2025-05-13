@@ -22,14 +22,14 @@ const router = createBrowserRouter([
         element: <CategoryNews />,
       },
       {
-        path: "about",
-        element: <About />,
-      },
-      {
         path: "career",
         element: <Career />,
       },
     ],
+  },
+  {
+    path: "/about",
+    element: <About />,
   },
   {
     path: "auth",

@@ -5,11 +5,13 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const SocialLogin = () => {
-  const { signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
+  const { signInWithGoogle, signInWithGitHub, setUser } =
+    useContext(AuthContext);
 
   const handleGoogleLogin = async () => {
     try {
-      await signInWithGoogle();
+      const userCredential = await signInWithGoogle();
+      setUser(userCredential.user); // Update the user state with the logged-in user
       toast.success("Signed in with Google!");
     } catch (error) {
       toast.error("Google sign-in failed.");
@@ -18,7 +20,9 @@ const SocialLogin = () => {
 
   const handleGitHubLogin = async () => {
     try {
-      await signInWithGitHub();
+      const userCredential = await signInWithGitHub();
+      console.log(userCredential.user);
+      setUser(userCredential.user); // Update the user state with the logged-in user
       toast.success("Signed in with GitHub!");
     } catch (error) {
       toast.error("GitHub sign-in failed.");
