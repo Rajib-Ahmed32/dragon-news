@@ -10,10 +10,26 @@ const Navbar = () => {
     <div className="flex justify-between items-center">
       <div className="hidden md:block flex-1"></div>
       <div className="nav flex flex-1 gap-3 md:gap-5 text-accent">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/career">Career</NavLink>
+        <NavLink
+          to="/"
+          className="hover:text-primary hover:underline transition duration-200"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/about"
+          className="hover:text-primary hover:underline transition duration-200"
+        >
+          About
+        </NavLink>
+        <NavLink
+          to="/career"
+          className="hover:text-primary hover:underline transition duration-200"
+        >
+          Career
+        </NavLink>
       </div>
+
       <div className="login-btn flex items-center gap-3 sm:gap-5">
         {user ? (
           <div className="flex items-center gap-3">

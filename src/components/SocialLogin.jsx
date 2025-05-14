@@ -11,7 +11,7 @@ const SocialLogin = () => {
   const handleGoogleLogin = async () => {
     try {
       const userCredential = await signInWithGoogle();
-      setUser(userCredential.user); // Update the user state with the logged-in user
+      setUser(userCredential.user);
       toast.success("Signed in with Google!");
     } catch (error) {
       toast.error("Google sign-in failed.");
@@ -21,8 +21,7 @@ const SocialLogin = () => {
   const handleGitHubLogin = async () => {
     try {
       const userCredential = await signInWithGitHub();
-      console.log(userCredential.user);
-      setUser(userCredential.user); // Update the user state with the logged-in user
+      setUser(userCredential.user);
       toast.success("Signed in with GitHub!");
     } catch (error) {
       toast.error("GitHub sign-in failed.");

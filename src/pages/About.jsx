@@ -16,7 +16,7 @@ const About = () => {
 
       <main>
         <section className="mb-10">
-          <h1 className="text-3xl font-bold mb-4 text-gray-800">
+          <h1 className="text-center text-3xl font-bold mb-4 text-gray-800">
             About The Dragon News
           </h1>
           <p className="mb-4 text-lg text-gray-700 leading-relaxed">
